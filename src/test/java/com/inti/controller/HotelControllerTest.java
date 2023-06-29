@@ -70,5 +70,5 @@ public class HotelControllerTest {
 			.andDo(print());
 		}
 
-	
+	//un commentaire de test
 }
