@@ -34,8 +34,8 @@ pipeline {
                 bat "mvn install"
             }
         }
-        
-        post{
+    }
+    post{
         	always{
         		echo"build terminé"
         		}
@@ -47,6 +47,5 @@ pipeline {
         		subject : "Echec build",
         		body : "verifie les test..."
         		}
-        }
     }
 }
