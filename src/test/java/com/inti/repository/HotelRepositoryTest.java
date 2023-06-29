@@ -82,7 +82,7 @@ public class HotelRepositoryTest {
 		h1.setNbEtoile(4);
 		ihr.save(h1);
 		Hotel h2 = new Hotel();
-		h2.setNom("George V");
+		h2.setNom("Grand Duc");
 		h2.setNbEtoile(5);		
 		
 		// WHEN
@@ -194,17 +194,7 @@ public class HotelRepositoryTest {
 		assertThat(client).isEqualTo(hotelSaved);
 	}
 	
-	@Test
-	public void getHotelNullTest()
-	{
-		// GIVEN
-				
-		// WHEN
-//		System.out.println(ihr.getReferenceById(150));
-		
-		// THEN
-//		Assertions.assertThrows(EntityNotFoundException.class, () -> ihr.getReferenceById(150));
-	}
+
 	
 	@Test
 	public void getAllHotelTest()
