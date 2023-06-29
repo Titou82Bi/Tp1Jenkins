@@ -20,5 +20,11 @@ public class Hotel {
 	@Column(nullable = true, unique = true )
 	private String nom;
 	private int nbEtoile;
+	public Hotel(String nom, int nbEtoile) {
+		super();
+		this.nom = nom;
+		this.nbEtoile = nbEtoile;
+	}
+	
 	
 }

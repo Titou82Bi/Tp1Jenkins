@@ -3,8 +3,10 @@ package com.inti.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.inti.model.Hotel;
@@ -34,31 +36,31 @@ public class HotelController {
 	@GetMapping("listeHotel")
 	public String listeHotel(Model m)
 	{
-		m.addAttribute("listeC", icr.findAll());
+		m.addAttribute("listeH", ihr.findAll());
 		
 		return "listeHotel";
 	}
 	
-	@GetMapping("modifierHotel/{id}")
-	public String modifierHotel(Model m, @PathVariable("id") int id)
+	@GetMapping("modifierHotel/{idHotel}")
+	public String modifierHotel(Model m, @PathVariable("idHotel") int idHotel)
 	{
-		m.addAttribute("Hotel", icr.getReferenceById(id));
+		m.addAttribute("hotel", ihr.getReferenceById(idHotel));
 		
 		return "modifierHotel";
 	}
 	
-	@PostMapping("modifierHotel/{id}")
-	public String modifierHotel(@ModelAttribute("hotel") Hotel c, @PathVariable("id") int id)
+	@PostMapping("modifierHotel/{idHotel}")
+	public String modifierHotel(@ModelAttribute("hotel") Hotel h, @PathVariable("idHotel") int idHotel)
 	{
-		icr.save(c);
+		ihr.save(h);
 		
 		return "redirect:/listeHotel";
 	}
 	
-	@GetMapping("deleteHotel/{id}")
-	public String deleteHotel(@PathVariable("id") int id)
+	@GetMapping("deleteHotel/{idHotel}")
+	public String deleteHotel(@PathVariable("idHotel") int idHotel)
 	{
-		icr.delete(icr.getReferenceById(id));
+		ihr.delete(ihr.getReferenceById(idHotel));
 		
 		return "redirect:/listeHotel";
 	}
