@@ -42,10 +42,10 @@ pipeline {
         	success{
         		echo "succes de toutes les etapes"
         		}
-        	failure{
+//        	failure{
 //        		mail to : "productOwner@test.fr",
 //        		subject : "Echec build",
 //        		body : "verifie les test..."
-        		}
+//        		}
     }
 }
