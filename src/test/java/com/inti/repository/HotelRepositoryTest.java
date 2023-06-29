@@ -181,7 +181,7 @@ public class HotelRepositoryTest {
 		
 		// THEN
 		assertThat(client).isNotNull();
-		assertThat(client.getNom()).isEqualTo("Grand Du");
+		assertThat(client.getNom()).isEqualTo("Grand Duc");
 		assertThat(client).isEqualTo(hotelSaved);
 	}
 	

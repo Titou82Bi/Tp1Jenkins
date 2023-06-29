@@ -9,17 +9,21 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Table @Entity
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data @AllArgsConstructor @NoArgsConstructor @RequiredArgsConstructor
 public class Hotel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	private int idHotel;
+	@NonNull
 	@Column(nullable = false, unique = true )
 	private String nom;
 	private int nbEtoile;
+	
 	public Hotel(String nom, int nbEtoile) {
 		super();
 		this.nom = nom;
