@@ -175,7 +175,7 @@ public class HotelRepositoryTest {
 		// WHEN
 		
 		// THEN
-		Assertions.assertThrows(Exception.class, () -> c1.setNom("test"));
+		Assertions.assertThrows(Exception.class, () -> h1.setNom("test"));
 	}
 	
 	@Test
@@ -210,18 +210,18 @@ public class HotelRepositoryTest {
 	public void getAllHotelTest()
 	{
 		// GIVEN
-		Hotel c1 = new Hotel("Durand", "Louis", "test@test.fr");
-		Hotel c2 = new Hotel("Durand", "Louis", "info@test.fr");
-		Hotel hotelSaved1 = ihr.save(c1);
-		Hotel hotelSaved2 = ihr.save(c2);
+		Hotel h1 = new Hotel("Grand Duc", 4);
+		Hotel h2 = new Hotel("Georges V",5);
+		Hotel hotelSaved1 = ihr.save(h1);
+		Hotel hotelSaved2 = ihr.save(h2);
 				
 		// WHEN
-		List<Hotel> listeC = ihr.findAll();
+		List<Hotel> listeH = ihr.findAll();
 		
 		// THEN
-		assertThat(listeC).isNotEmpty();
-		assertThat(listeC).hasSize(2);
-		assertThat(listeC.get(0).getClass()).hasSameClassAs(Hotel.class);
+		assertThat(listeH).isNotEmpty();
+		assertThat(listeH).hasSize(2);
+		assertThat(listeH.get(0).getClass()).hasSameClassAs(Hotel.class);
 	}
 	
 	@Test
@@ -230,10 +230,10 @@ public class HotelRepositoryTest {
 		// GIVEN
 				
 		// WHEN
-		List<Hotel> listeC = ihr.findAll();
+		List<Hotel> listeH = ihr.findAll();
 		
 		// THEN
-		assertThat(listeC).isEmpty();
-		assertThat(listeC).hasSize(0);
+		assertThat(listeH).isEmpty();
+		assertThat(listeH).hasSize(0);
 	}
 }
