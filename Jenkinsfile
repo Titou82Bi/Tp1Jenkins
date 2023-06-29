@@ -37,15 +37,15 @@ pipeline {
     }
     post{
         	always{
-        		echo"build terminé"
+        		echo "build terminé"
         		}
         	success{
-        		eccho"succes de toutes les etapes"
+        		echo "succes de toutes les etapes"
         		}
         	failure{
-        		mail to : "productOwner@test.fr",
-        		subject : "Echec build",
-        		body : "verifie les test..."
+//        		mail to : "productOwner@test.fr",
+//        		subject : "Echec build",
+//        		body : "verifie les test..."
         		}
     }
 }
