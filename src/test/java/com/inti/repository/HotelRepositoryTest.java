@@ -127,7 +127,7 @@ public class HotelRepositoryTest {
 	public void updateHotelTest()
 	{
 		// GIVEN
-		Hotel c1 = new Hotel("Grand Duc",4);
+		Hotel c1 = new Hotel("George V",4);
 		Hotel hotelSaved = ihr.save(c1);
 				
 		// WHEN
@@ -136,7 +136,7 @@ public class HotelRepositoryTest {
 		
 		// THEN
 		assertThat(hotelModified).isNotNull();
-		assertThat(hotelModified.getNom()).isEqualTo("Dupont");
+		assertThat(hotelModified.getNom()).isEqualTo("Grand Duc");
 	}
 	
 	@Test
@@ -181,7 +181,7 @@ public class HotelRepositoryTest {
 		
 		// THEN
 		assertThat(client).isNotNull();
-		assertThat(client.getNom()).isEqualTo("Durand");
+		assertThat(client.getNom()).isEqualTo("Grand Du");
 		assertThat(client).isEqualTo(hotelSaved);
 	}
 	
