@@ -2,5 +2,5 @@ package com.inti.model;
 
 public class Hotel {
 
-	//test liaison jenkins2
+	//test liaison jenkins3
 }
