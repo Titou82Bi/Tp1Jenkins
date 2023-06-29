@@ -93,21 +93,6 @@ public class HotelRepositoryTest {
 	}
 	
 	@Test
-	public void saveHotelWithNomTailleExceptionTest()
-	{
-		// GIVEN
-		Hotel c1 = new Hotel();
-		c1.setNom("Grand Duccccccccccccccccc");
-		c1.setNbEtoile(4);		
-		
-		// WHEN
-//		Hotel hotelSaved = ihr.save(h2);
-		
-		// THEN : BIZARRE pour la taille, exception !
-//		Assertions.assertThrows(Exception.class, () -> ihr.save(h1));
-	}
-	
-	@Test
 	public void deleteHotelTest()
 	{
 		// GIVEN
