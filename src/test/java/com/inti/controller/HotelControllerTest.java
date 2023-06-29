@@ -27,46 +27,46 @@ public class HotelControllerTest {
 		private IHotelRepository ihr;
 		
 		@Test
-		public void saveClient() throws Exception
+		public void saveHotel() throws Exception
 		{
-			mock.perform(get("/creerClient"))
+			mock.perform(get("/creerHotel"))
 			.andExpect(status().isOk())
 
 			.andDo(print());
 		}
 		
 		@Test
-		public void listeClient() throws Exception
+		public void listeHotel() throws Exception
 		{
-			mock.perform(get("/listeClient"))
+			mock.perform(get("/listeHotel"))
 			.andExpect(status().isOk())
 			.andDo(print());
 		}
 		
 		@Test
-		public void deleteClient() throws Exception
+		public void deleteHotel() throws Exception
 		{
-			mock.perform(get("/deleteClient/1"))
+			mock.perform(get("/deleteHotel/1"))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(redirectedUrl("/listeClient"))
+			.andExpect(redirectedUrl("/listeHotel"))
 			.andDo(print());
 		}
 		
 		@Test
-		public void saveClientPost() throws Exception
+		public void saveHotelPost() throws Exception
 		{
-			mock.perform(post("/creerClient").sessionAttr("client", new Hotel("Grand Duc", 4)))
+			mock.perform(post("/creerHotel").sessionAttr("hotel", new Hotel("Grand Duc", 4)))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(redirectedUrl("/listeClient"))
+			.andExpect(redirectedUrl("/listeHotel"))
 			.andDo(print());
 		}
 		
 		@Test
-		public void updateClientPost() throws Exception
+		public void updateHotelPost() throws Exception
 		{
-			mock.perform(post("/modifierClient/1").sessionAttr("client", new Hotel("Grand Duc", 4)))
+			mock.perform(post("/modifierHotel/1").sessionAttr("hotel", new Hotel("Grand Duc", 4)))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(redirectedUrl("/listeClient"))
+			.andExpect(redirectedUrl("/listeHotel"))
 			.andDo(print());
 		}
 
